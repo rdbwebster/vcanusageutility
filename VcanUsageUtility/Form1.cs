@@ -278,7 +278,8 @@ namespace WindowsFormsApplication1
                                    " WHEN enteredby !=  'Gross Bookings' " +
                                    " THEN detailTotalLC " +
                                    " ELSE 0 " +
-                                   " END) as totalRebate " +
+                                   " END) as totalRebate, " +
+                                   " SUM(qty) as points " +
                               " FROM Bookings.dbo.[odbc-acctg-vspp-detailed]" +
                               " where Month = '" + startOfMonth.ToString("yyyyMMdd") +
                               "' group by partnerid, orderidpm";
